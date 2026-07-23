@@ -1,4 +1,3 @@
 def call(){
-  sh "docker compose pull"
-  sh "docker compose up -d --force-recreate"
+  sh "kubectl apply -f k8s/"
 }
