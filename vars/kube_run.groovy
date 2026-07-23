@@ -1,3 +1,11 @@
-def call(){
-  sh "kubectl apply -f k8s/"
+def call() {
+    sh '''
+    whoami
+    echo "KUBECONFIG=$KUBECONFIG"
+    pwd
+    kubectl config current-context
+    kubectl config view
+    kubectl cluster-info
+    kubectl get nodes
+    '''
 }
