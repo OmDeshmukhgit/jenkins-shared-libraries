@@ -1,3 +1,7 @@
 def call() {
-    sh "kubectl apply -f k8s/"
+
+    sh '''
+        envsubst < k8s/deployment.yaml | kubectl apply -f -
+        kubectl apply -f k8s/service.yaml
+    '''
 }
